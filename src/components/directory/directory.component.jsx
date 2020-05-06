@@ -6,32 +6,32 @@ import "./directory.styles.scss";
 
 const SECTIONS = [
   {
-    title: "Hats",
+    title: "Цветы",
     imageUrl:
       "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
     id: 1,
   },
   {
-    title: " Jackets",
+    title: " Цветы",
     imageUrl:
       "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
     id: 2,
   },
   {
-    title: "Sneakers1",
+    title: "Цветы",
     imageUrl:
       "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
     id: 3,
   },
   {
-    title: " Mens",
+    title: " Цветы",
     imageUrl:
       "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
     id: 3,
     size: "large",
   },
   {
-    title: " Womans",
+    title: " Цветы",
     imageUrl:
       "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
     id: 3,
