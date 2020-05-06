@@ -6,32 +6,36 @@ import "./directory.styles.scss";
 
 const SECTIONS = [
   {
-    title: "Цветы",
+    title: "Hats",
     imageUrl:
       "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
     id: 1,
+    linkUrl: "hats",
   },
   {
-    title: " Цветы",
+    title: " Jackets",
     imageUrl:
       "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
     id: 2,
+    linkUrl: "",
   },
   {
-    title: "Цветы",
+    title: "Sneakers",
     imageUrl:
       "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
     id: 3,
+    linkUrl: "",
   },
   {
-    title: " Цветы",
+    title: "Mens",
     imageUrl:
       "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
     id: 3,
     size: "large",
+    linkUrl: "",
   },
   {
-    title: " Цветы",
+    title: " Womans",
     imageUrl:
       "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
     id: 3,
@@ -44,8 +48,8 @@ const Directory = () => {
 
   return (
     <div className="directory-menu">
-      {sections.map(({ title, imageUrl, id, size }) => (
-        <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+      {sections.map(({ id, ...otherSectionProps }) => (
+        <MenuItem key={id} {...otherSectionProps} />
       ))}
     </div>
   );
