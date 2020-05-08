@@ -1,30 +1,30 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import FormInput from "../form-input/form-input.component";
-import CustomButton from "../custom-button/custom-button.component";
+import FormInput from '../form-input/form-input.component';
+import CustomButton from '../custom-button/custom-button.component';
 
-import { signInWithGoogle } from "../../firebase/firebase.utils";
+import { signInWithGoogle } from '../../firebase/firebase.utils';
 
-import "./sign-in.styles.scss";
+import './sign-in.styles.scss';
 
 const SignIn = () => {
-  const [formValues, setFormValues] = useState({ email: "", password: "" });
+  const [formValues, setFormValues] = useState({ email: '', password: '' });
 
-  const handleChange = (event) => {
+  const handleChange = event => {
     const { name, value } = event.target;
 
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
 
-    setFormValues({ email: "", password: "" });
+    setFormValues({ email: '', password: '' });
   };
 
   return (
     <div className="sign-in">
-      <h1>I already have an account</h1>
+      <h2>I already have an account</h2>
       <span>Sign in with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
