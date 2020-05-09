@@ -1,45 +1,45 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import MenuItem from "../menu-item/menu-item.component";
+import MenuItem from '../menu-item/menu-item.component';
 
-import "./directory.styles.scss";
+import './directory.styles.scss';
 
 const SECTIONS = [
   {
-    title: "Hats",
+    title: 'Hats',
     imageUrl:
-      "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
+      'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
     id: 1,
-    linkUrl: "hats",
+    linkUrl: 'hats',
   },
   {
-    title: " Jackets",
+    title: ' Jackets',
     imageUrl:
-      "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
+      'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
     id: 2,
-    linkUrl: "",
+    linkUrl: '',
   },
   {
-    title: "Sneakers",
+    title: 'Sneakers',
     imageUrl:
-      "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
+      'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
     id: 3,
-    linkUrl: "",
+    linkUrl: '',
   },
   {
-    title: "Mens",
+    title: 'Mens',
     imageUrl:
-      "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
+      'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
     id: 3,
-    size: "large",
-    linkUrl: "",
+    size: 'large',
+    linkUrl: '',
   },
   {
-    title: " Womans",
+    title: ' Womans',
     imageUrl:
-      "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
+      'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
     id: 3,
-    size: "large",
+    size: 'large',
   },
 ];
 
