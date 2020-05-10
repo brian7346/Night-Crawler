@@ -1,8 +1,15 @@
+//@flow
 import React from 'react';
+
+import type { TCollectionItemProps } from './collection-item.types';
 
 import './collection-item.styles.scss';
 
-const CollectionItem = ({ id, name, price, imageUrl }) => (
+const CollectionItem = ({
+  name,
+  price,
+  imageUrl,
+}: TCollectionItemProps): React$Element<'div'> => (
   <div className="collection-item">
     <div
       className="image"
