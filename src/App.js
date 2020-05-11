@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import './App.css';
 
@@ -14,6 +14,7 @@ import { setCurrentUser } from './redux/user/user.actions';
 function App() {
   const unsubscribeFromAuth = useRef(null);
   const dispatch = useDispatch();
+  const currentUser = useSelector(state => state.user.currentUser);
 
   useEffect(() => {
     unsubscribeFromAuth.current = auth.onAuthStateChanged(async userAuth => {
@@ -41,7 +42,13 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/shop" component={ShopPage} />
-        <Route path="/signin" component={SignInAndSignUp} />
+        <Route
+          exac
+          path="/signin"
+          render={() =>
+            currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
+          }
+        />
       </Switch>
     </div>
   );
