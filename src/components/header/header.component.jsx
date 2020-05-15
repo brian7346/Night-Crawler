@@ -32,7 +32,7 @@ const Header = (): React$Element<'div'> => {
           CONTACT
         </Link>
         {currentUser ? (
-          <div className="option" onClick={auth.signOut}>
+          <div className="option" onClick={(): void => auth.signOut()}>
             SIGN OUT
           </div>
         ) : (
