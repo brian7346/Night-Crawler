@@ -7,6 +7,8 @@ import { auth } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
+import type { THeaderState } from './header.types';
+
 import Logo from '../../assets/crown.svg';
 
 import './header.styles.scss';
@@ -15,7 +17,7 @@ const Header = (): React$Element<'div'> => {
   const {
     user: { currentUser },
     cart: { hidden },
-  } = useSelector(state => state);
+  }: THeaderState = useSelector((state: THeaderState) => state);
 
   return (
     <div className="header">
