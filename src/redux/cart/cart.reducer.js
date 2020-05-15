@@ -1,10 +1,12 @@
+// @flow
 import { CartActionTypes } from './cart.types';
+import type { TCartState, TAction } from './cart.types';
 
-const INITIAL_STATE = {
+const INITIAL_STATE: TCartState = {
   hidden: true,
 };
 
-const cartReducer = (state = INITIAL_STATE, action) => {
+const cartReducer = (state: TCartState = INITIAL_STATE, action: TAction) => {
   switch (action.type) {
     case CartActionTypes.TOGGLE_CART_HIDDEN:
       return {
