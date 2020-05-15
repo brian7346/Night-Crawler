@@ -10,5 +10,10 @@ export type TCurrentUser = {
 };
 
 export type TUserState = {
-  currentUser: TCurrentUser,
+  currentUser: TCurrentUser | null,
+};
+
+export type TUserAction = {
+  type: string,
+  payload: TCurrentUser,
 };

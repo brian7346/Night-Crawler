@@ -1,9 +1,15 @@
+// @flow
 import { UserActionTypes } from './user.types';
-const INITIAL_STATE = {
+import type { TUserState, TUserAction } from './user.types';
+
+const INITIAL_STATE: TUserState = {
   currentUser: null,
 };
 
-const userReducer = (state = INITIAL_STATE, action) => {
+const userReducer = (
+  state: TUserState = INITIAL_STATE,
+  action: TUserAction
+) => {
   switch (action.type) {
     case UserActionTypes.SET_CURRENT_USER:
       return {

@@ -7,6 +7,6 @@ export type TCartState = {
   hidden: boolean,
 };
 
-export type TAction = {
+export type TCartAction = {
   type: string,
 };
