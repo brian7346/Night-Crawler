@@ -1,11 +1,20 @@
+// @flow
 import React from 'react';
 
 import './custom-button.styles.scss';
 
-const CustomButton = ({ children, isGoogleSignIn, ...otherProps }) => (
+import type { TCustomButtonProps } from './custom-button.types';
+
+const CustomButton = ({
+  children,
+  isGoogleSignIn,
+  type,
+  onClick,
+}: TCustomButtonProps): React$Element<'button'> => (
   <button
     className={`${isGoogleSignIn ? 'google-sign-in' : ''} custom-button`}
-    {...otherProps}
+    type={type}
+    onClick={onClick}
   >
     {children}
   </button>

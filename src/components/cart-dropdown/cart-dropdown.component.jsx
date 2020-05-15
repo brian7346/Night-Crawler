@@ -1,10 +1,11 @@
+// @flow
 import React from 'react';
 
 import CustomButton from '../custom-button/custom-button.component';
 
 import './cart-dropdown.style.scss';
 
-const CartDropdown = () => (
+const CartDropdown = (): React$Element<'div'> => (
   <div className="cart-dropdown">
     <div className="cart-items" />
     <CustomButton>GO TO CHECKOUT</CustomButton>
