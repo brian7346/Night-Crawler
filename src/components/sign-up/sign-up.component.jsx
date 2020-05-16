@@ -1,21 +1,26 @@
+// @flow
 import React, { useState } from 'react';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
+import type { TSignUpFormValues } from './sign-up.types';
+
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
 import './sign-up.styles.scss';
 
-const SignUp = () => {
-  const [formValues, setFormValues] = useState({
+const SignUp = (): React$Element<'div'> => {
+  const [formValues, setFormValues] = useState<TSignUpFormValues>({
     displayName: '',
     email: '',
     password: '',
     confirmPassword: '',
   });
 
-  const handleSubmit = async event => {
+  const handleSubmit = async (
+    event: SyntheticEvent<HTMLButtonElement>
+  ): Promise<void> => {
     event.preventDefault();
     const { displayName, email, password, confirmPassword } = formValues;
 
@@ -43,7 +48,7 @@ const SignUp = () => {
     }
   };
 
-  const handleChange = event => {
+  const handleChange = (event: SyntheticInputEvent<HTMLInputElement>): void => {
     const { name, value } = event.target;
 
     setFormValues({ ...formValues, [name]: value });
@@ -58,7 +63,7 @@ const SignUp = () => {
           type="text"
           name="displayName"
           value={formValues.displayName}
-          onChange={handleChange}
+          handleChange={handleChange}
           label="Display Name"
           required
         />
@@ -66,7 +71,7 @@ const SignUp = () => {
           type="email"
           name="email"
           value={formValues.email}
-          onChange={handleChange}
+          handleChange={handleChange}
           label="Email"
           required
         />
@@ -74,7 +79,7 @@ const SignUp = () => {
           type="password"
           name="password"
           value={formValues.password}
-          onChange={handleChange}
+          handleChange={handleChange}
           label="Password"
           required
         />
@@ -82,7 +87,7 @@ const SignUp = () => {
           type="password"
           name="confirmPassword"
           value={formValues.confirmPassword}
-          onChange={handleChange}
+          handleChange={handleChange}
           label="Confirm Password"
           required
         />
