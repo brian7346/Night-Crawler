@@ -15,7 +15,7 @@ const MenuItem = ({
 }: TMenuItemProps): React$Element<'div'> => (
   <div
     className={`${size} menu-item`}
-    onClick={() => history.push(`${match.url}${linkUrl}`)}
+    onClick={(): number => history.push(`${match.url}${linkUrl}`)}
   >
     <div
       className="background-image"

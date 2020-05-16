@@ -1,3 +1,4 @@
+// @flow
 import React, { useState } from 'react';
 
 import FormInput from '../form-input/form-input.component';
@@ -5,18 +6,25 @@ import CustomButton from '../custom-button/custom-button.component';
 
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
+import type { TSigInFormValues } from './sign-in.types';
+
 import './sign-in.styles.scss';
 
-const SignIn = () => {
-  const [formValues, setFormValues] = useState({ email: '', password: '' });
+const SignIn = (): React$Element<'div'> => {
+  const [formValues, setFormValues] = useState<TSigInFormValues>({
+    email: '',
+    password: '',
+  });
 
-  const handleChange = event => {
+  const handleChange = (event: SyntheticInputEvent<HTMLInputElement>): void => {
     const { name, value } = event.target;
 
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const handleSubmit = async event => {
+  const handleSubmit = async (
+    event: SyntheticInputEvent<HTMLInputElement>
+  ): Promise<void> => {
     event.preventDefault();
     const { email, password } = formValues;
 
