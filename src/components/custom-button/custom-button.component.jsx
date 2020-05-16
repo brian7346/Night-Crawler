@@ -9,10 +9,13 @@ const CustomButton = ({
   children,
   isGoogleSignIn,
   type,
+  inverted,
   onClick,
 }: TCustomButtonProps): React$Element<'button'> => (
   <button
-    className={`${isGoogleSignIn ? 'google-sign-in' : ''} custom-button`}
+    className={`${inverted ? 'inverted' : ''} ${
+      isGoogleSignIn ? 'google-sign-in' : ''
+    } custom-button`}
     type={type}
     onClick={onClick}
   >
