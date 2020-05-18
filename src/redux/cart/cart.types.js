@@ -6,9 +6,14 @@ export const CartActionTypes = {
   ADD_ITEM: 'ADD_ITEM',
 };
 
+export type TCartItem = {
+  ...TShopItem,
+  quantity: number,
+};
+
 export type TCartState = {
   hidden: boolean,
-  cartItems: Array<TShopItem>,
+  cartItems: Array<TCartItem>,
 };
 
 export type TCartAction = {
