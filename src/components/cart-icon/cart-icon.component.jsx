@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 
@@ -11,11 +11,11 @@ import './cart-icon.styles.scss';
 
 const CartIcon = (): React$Element<'div'> => {
   const dispatch: TCartIconDispatch = useDispatch();
+  const toggleHidden = useCallback(() => dispatch(toggleCartHidden()), [
+    dispatch,
+  ]);
   return (
-    <div
-      className="cart-icon"
-      onClick={(): void => dispatch(toggleCartHidden())}
-    >
+    <div className="cart-icon" onClick={toggleHidden}>
       <img src={ShoppingIcon} className="shopping-icon" alt="shopping" />
       <span className="item-count">0</span>
     </div>
