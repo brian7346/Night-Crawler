@@ -1,7 +1,10 @@
 //@flow
 
 export type TCollectionItemProps = {
-  name: string,
-  price: number,
-  imageUrl: string,
+  item: {
+    id: number,
+    name: string,
+    price: number,
+    imageUrl: string,
+  },
 };

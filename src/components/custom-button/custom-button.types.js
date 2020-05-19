@@ -1,7 +1,7 @@
 // @flow
 
 export type TCustomButtonProps = {
-  children: string,
+  children: string | Array<string>,
   isGoogleSignIn?: boolean,
   type?: string,
   inverted?: boolean,
