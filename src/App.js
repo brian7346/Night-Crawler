@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import './App.css';
 
@@ -10,11 +11,16 @@ import Header from './components/header/header.component';
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
+import { selectCurrentUser } from './redux/user/user.selectors';
 
 function App() {
   const unsubscribeFromAuth = useRef(null);
   const dispatch = useDispatch();
-  const currentUser = useSelector(state => state.user.currentUser);
+  const { currentUser } = useSelector(
+    createStructuredSelector({
+      currentUser: selectCurrentUser,
+    })
+  );
 
   useEffect(() => {
     unsubscribeFromAuth.current = auth.onAuthStateChanged(async userAuth => {

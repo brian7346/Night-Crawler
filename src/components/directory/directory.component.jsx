@@ -33,7 +33,7 @@ const SECTIONS: Array<TDirectorySections> = [
     title: 'Mens',
     imageUrl:
       'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
-    id: 3,
+    id: 4,
     size: 'large',
     linkUrl: '',
   },
@@ -41,7 +41,7 @@ const SECTIONS: Array<TDirectorySections> = [
     title: ' Womans',
     imageUrl:
       'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
-    id: 3,
+    id: 5,
     size: 'large',
     linkUrl: '',
   },
