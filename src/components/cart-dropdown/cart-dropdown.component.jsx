@@ -8,10 +8,12 @@ import CustomButton from '../custom-button/custom-button.component';
 import CartItem from '../cart-item/cart-item.component';
 import { selectCartItems } from '../../redux/cart/cart.selectors';
 
+import type { TCartDropdownSelector } from './cart-dropdown.types';
+
 import './cart-dropdown.style.scss';
 
 const CartDropdown = ({ history }): React$Element<'div'> => {
-  const { cartItems } = useSelector(
+  const { cartItems }: TCartDropdownSelector = useSelector(
     createStructuredSelector({ cartItems: selectCartItems })
   );
   return (

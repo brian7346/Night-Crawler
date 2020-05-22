@@ -9,12 +9,12 @@ export const selectCartItems: TCartItem[] = createSelector(
   (cart: TCartState) => cart.cartItems
 );
 
-export const selectCartHidden = createSelector(
+export const selectCartHidden: boolean = createSelector(
   selectCart,
   (cart: TCartState) => cart.hidden
 );
 
-export const selectCartItemsCount = createSelector(
+export const selectCartItemsCount: number = createSelector(
   state => state.cart.cartItems,
   (cartItems: TCartItem[]) =>
     cartItems.reduce(
