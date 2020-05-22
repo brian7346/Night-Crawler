@@ -5,21 +5,29 @@ import type { TCartState, TCartItem } from './cart.types';
 const selectCart = state => state.cart;
 
 export const selectCartItems: TCartItem[] = createSelector(
-  selectCart,
+  [selectCart],
   (cart: TCartState) => cart.cartItems
 );
 
 export const selectCartHidden: boolean = createSelector(
-  selectCart,
+  [selectCart],
   (cart: TCartState) => cart.hidden
 );
 
 export const selectCartItemsCount: number = createSelector(
-  state => state.cart.cartItems,
+  [selectCartItems],
   (cartItems: TCartItem[]) =>
     cartItems.reduce(
       (accumulatedQuantoty, cartItem) =>
         accumulatedQuantoty + cartItem.quantity,
       0
     )
+);
+
+export const selectCartTotal = createSelector([selectCartItems], cartItems =>
+  cartItems.reduce(
+    (accumulatedPrice, cartItem) =>
+      accumulatedPrice + cartItem.price * cartItem.quantity,
+    0
+  )
 );
