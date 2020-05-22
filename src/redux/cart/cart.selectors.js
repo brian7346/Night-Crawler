@@ -1,17 +1,22 @@
+// @flow
 import { createSelector } from 'reselect';
+import type { TCartState, TCartItem } from './cart.types';
 
 const selectCart = state => state.cart;
 
-export const selectCartItems = createSelector(
+export const selectCartItems: TCartItem[] = createSelector(
   selectCart,
-  cart => cart.cartItems
+  (cart: TCartState) => cart.cartItems
 );
 
-export const selectCartHidden = createSelector(selectCart, cart => cart.hidden);
+export const selectCartHidden = createSelector(
+  selectCart,
+  (cart: TCartState) => cart.hidden
+);
 
 export const selectCartItemsCount = createSelector(
   state => state.cart.cartItems,
-  cartItems =>
+  (cartItems: TCartItem[]) =>
     cartItems.reduce(
       (accumulatedQuantoty, cartItem) =>
         accumulatedQuantoty + cartItem.quantity,

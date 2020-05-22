@@ -1,8 +1,10 @@
+// @flow
 import { createSelector } from 'reselect';
+import type { TCurrentUser, TUserState } from './user.types';
 
 const selectUser = state => state.user;
 
-export const selectCurrentUser = createSelector(
+export const selectCurrentUser: TCurrentUser = createSelector(
   selectUser,
-  user => user.currentUser
+  (user: TUserState) => user.currentUser
 );

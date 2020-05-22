@@ -6,8 +6,7 @@ export const CartActionTypes = {
   ADD_ITEM: 'ADD_ITEM',
 };
 
-export type TCartItem = {
-  ...TShopItem,
+export type TCartItem = TShopItem & {
   quantity: number,
 };
 
