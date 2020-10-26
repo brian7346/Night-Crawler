@@ -1,6 +1,6 @@
 // @flow
 import { CartActionTypes } from './cart.types';
-import type { TCartState, TCartAction } from './cart.types';
+import type { TCartState, TCartAction, TCartItem } from './cart.types';
 import { addItemToCart } from './cart.utils';
 
 const INITIAL_STATE: TCartState = {
@@ -22,6 +22,13 @@ const cartReducer = (
       return {
         ...state,
         cartItems: addItemToCart(state.cartItems, action.payload),
+      };
+    case CartActionTypes.CLEAR_ITEM_FROM_CART:
+      return {
+        ...state,
+        cartItems: state.cartItems.filter<TCartItem>(
+          cartItem => cartItem.id !== action.payload.id
+        ),
       };
     default:
       return state;
